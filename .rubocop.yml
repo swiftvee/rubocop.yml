@@ -1,0 +1,84 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  inherit_mode:
+    merge:
+      - Exclude
+  Exclude:
+  # All ignored directories should be added here because scanning directories with a lot of files (e.g., storage)
+  # will slow down RuboCop. node_modules, tmp, vendor and directories starting with "." are ignored by default.
+  # https://github.com/rubocop/rubocop/blob/master/config/default.yml
+  - 'coverage/**/*'
+  - 'log/**/*'
+  - 'public/**/*' # There shouldn't be any Ruby files here.
+  - 'storage/**/*'
+  NewCops: enable
+
+# https://docs.rubocop.org/rubocop/cops_metrics.html#metricsabcsize
+Metrics/AbcSize:
+  Max: 30
+
+# https://docs.rubocop.org/rubocop/cops_metrics.html#metricsblocklength
+Metrics/BlockLength:
+  Exclude:
+  - 'config/**/*'
+
+# https://docs.rubocop.org/rubocop/cops_metrics.html#metricsmethodlength
+Metrics/MethodLength:
+  Max: 25
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec_capybara.html#rspeccapybarafeaturemethods
+RSpec/Capybara/FeatureMethods:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/{requests,system}/**/*'
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecexamplelength
+RSpec/ExampleLength:
+  Max: 25
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecimplicitsubject
+RSpec/ImplicitSubject:
+  EnforcedStyle: single_statement_only
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecmultipleexpectations
+RSpec/MultipleExpectations:
+  Exclude:
+  - 'spec/system/**/*'
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecmultiplememoizedhelpers
+RSpec/MultipleMemoizedHelpers:
+  Max: 20
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecnestedgroups
+RSpec/NestedGroups:
+  Max: 7
+
+# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecpending
+RSpec/Pending:
+  Enabled: true
+
+# https://docs.rubocop.org/rubocop/cops_style.html#styledocumentation
+Style/Documentation:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_style.html#stylefetchenvvar
+Style/FetchEnvVar:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_style.html#stylefrozenstringliteralcomment
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_style.html#stylesymbolarray
+Style/SymbolArray:
+  Enabled: false
+
+# https://docs.rubocop.org/rubocop/cops_style.html#stylewordarray
+Style/WordArray:
+  Enabled: false
