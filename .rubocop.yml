@@ -3,17 +3,6 @@ require:
   - rubocop-rspec
 
 AllCops:
-  inherit_mode:
-    merge:
-      - Exclude
-  Exclude:
-  # All ignored directories should be added here because scanning directories with a lot of files (e.g., storage)
-  # will slow down RuboCop. node_modules, tmp, vendor and directories starting with "." are ignored by default.
-  # https://github.com/rubocop/rubocop/blob/master/config/default.yml
-  - 'coverage/**/*'
-  - 'log/**/*'
-  - 'public/**/*' # There shouldn't be any Ruby files here.
-  - 'storage/**/*'
   NewCops: enable
 
 # https://docs.rubocop.org/rubocop/cops_metrics.html#metricsabcsize
