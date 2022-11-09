@@ -38,7 +38,7 @@ RSpec/ImplicitSubject:
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecmultipleexpectations
 RSpec/MultipleExpectations:
   Exclude:
-  - 'spec/system/**/*'
+  - 'spec/{requests,system}/**/*'
 
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecmultiplememoizedhelpers
 RSpec/MultipleMemoizedHelpers:
