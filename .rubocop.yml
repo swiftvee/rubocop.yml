@@ -15,6 +15,9 @@ Metrics/BlockLength:
   Exclude:
   - 'config/**/*'
 
+Metrics/ClassLength:
+  Max: 200
+
 # https://docs.rubocop.org/rubocop/cops_metrics.html#metricsmethodlength
 Metrics/MethodLength:
   Max: 25
