@@ -72,6 +72,9 @@ Style/FetchEnvVar:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
 # https://docs.rubocop.org/rubocop/cops_style.html#stylesymbolarray
 Style/SymbolArray:
   Enabled: false
