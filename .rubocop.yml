@@ -75,6 +75,9 @@ Style/FrozenStringLiteralComment:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
 # https://docs.rubocop.org/rubocop/cops_style.html#stylesymbolarray
 Style/SymbolArray:
   Enabled: false
