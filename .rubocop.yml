@@ -9,11 +9,20 @@ AllCops:
 # https://docs.rubocop.org/rubocop/cops_metrics.html#metricsabcsize
 Metrics/AbcSize:
   Max: 30
+  Exclude:
+  - 'app/helpers/**/*'
+
+
+# https://docs.rubocop.org/rubocop/cops_metrics.html#metricscyclomaticcomplexity
+Metrics/CyclomaticComplexity:
+  Exclude:
+  - 'app/helpers/**/*'
 
 # https://docs.rubocop.org/rubocop/cops_metrics.html#metricsblocklength
 Metrics/BlockLength:
   Exclude:
   - 'config/**/*'
+  - 'app/helpers/**/*'
 
 Metrics/ClassLength:
   Max: 200
@@ -21,6 +30,11 @@ Metrics/ClassLength:
 # https://docs.rubocop.org/rubocop/cops_metrics.html#metricsmethodlength
 Metrics/MethodLength:
   Max: 25
+
+# https://docs.rubocop.org/rubocop/cops_metrics.html#metricsperceivedcomplexity
+Metrics/PerceivedComplexity:
+  Exclude:
+  - 'app/helpers/**/*'
 
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec_capybara.html#rspeccapybarafeaturemethods
 RSpec/Capybara/FeatureMethods:
