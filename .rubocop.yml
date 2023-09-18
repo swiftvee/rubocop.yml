@@ -23,6 +23,9 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Max: 25
 
+Metrics/ParameterLists:
+  Max: 7
+
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec_capybara.html#rspeccapybarafeaturemethods
 RSpec/Capybara/FeatureMethods:
   Enabled: false
