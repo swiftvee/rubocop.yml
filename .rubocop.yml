@@ -29,6 +29,13 @@ Metrics/MethodLength:
 Metrics/ParameterLists:
   Max: 7
 
+Rails/UnknownEnv:
+  Environments:
+  - development
+  - test
+  - production
+  - staging
+
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec_capybara.html#rspeccapybarafeaturemethods
 RSpec/Capybara/FeatureMethods:
   Enabled: false
