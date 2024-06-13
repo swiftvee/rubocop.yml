@@ -37,10 +37,6 @@ Rails/UnknownEnv:
   - production
   - staging
 
-# https://docs.rubocop.org/rubocop-rspec/cops_rspec_capybara.html#rspeccapybarafeaturemethods
-RSpec/Capybara/FeatureMethods:
-  Enabled: false
-
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
 RSpec/DescribeClass:
   Exclude:
