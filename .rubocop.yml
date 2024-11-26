@@ -44,6 +44,8 @@ Metrics/AbcSize:
 
 # https://docs.rubocop.org/rubocop/cops_metrics.html#metricsblocklength
 Metrics/BlockLength:
+  AllowedMethods:
+  - included
   Exclude:
   - 'config/**/*'
 
