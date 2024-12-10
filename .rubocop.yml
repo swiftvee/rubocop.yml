@@ -115,6 +115,9 @@ Style/FetchEnvVar:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/HashSyntax:
+  EnforcedShorthandSyntax: always
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
