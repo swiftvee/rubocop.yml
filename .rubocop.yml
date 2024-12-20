@@ -88,10 +88,6 @@ RSpec/MultipleMemoizedHelpers:
 RSpec/NestedGroups:
   Max: 7
 
-# https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecnoexpectationexample
-RSpec/NoExpectationExample:
-  Enabled: false
-
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecpending
 RSpec/Pending:
   Enabled: true
