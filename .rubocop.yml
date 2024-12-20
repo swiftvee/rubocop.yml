@@ -62,13 +62,6 @@ Metrics/ModuleLength:
 Metrics/ParameterLists:
   Max: 7
 
-Rails/UnknownEnv:
-  Environments:
-  - development
-  - test
-  - production
-  - staging
-
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
 RSpec/DescribeClass:
   Exclude:
