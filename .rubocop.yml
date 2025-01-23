@@ -62,6 +62,9 @@ Metrics/ModuleLength:
 Metrics/ParameterLists:
   Max: 7
 
+Rails/StrongParametersExpect:
+  Enabled: false
+
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
 RSpec/DescribeClass:
   Exclude:
