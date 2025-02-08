@@ -63,7 +63,7 @@ Metrics/ParameterLists:
   Max: 7
 
 # https://docs.rubocop.org/rubocop-rails/cops_rails.html#railsi18nlocaletexts
-Rails/I18nLocaleTexts
+Rails/I18nLocaleTexts:
   Enabled: false
 
 Rails/StrongParametersExpect:
