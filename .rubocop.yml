@@ -69,6 +69,15 @@ Rails/I18nLocaleTexts:
 Rails/StrongParametersExpect:
   Enabled: false
 
+# https://docs.rubocop.org/rubocop-rails/cops_rails.html#railsunknownenv
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - test_integ
+    - production
+    - staging
+
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
 RSpec/DescribeClass:
   Exclude:
