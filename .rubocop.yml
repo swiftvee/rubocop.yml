@@ -1,5 +1,5 @@
 require:
-  - ./cops/custom/disallow_postgres_time_functions.rb
+  - ./rubocop/cops/custom/disallow_postgres_time_functions.rb
 
 plugins:
   - rubocop-capybara
