@@ -1,3 +1,6 @@
+require:
+  - ./rubocop/cops/custom/disallow_stubbing_in_system_specs.rb
+
 plugins:
   - rubocop-capybara
   - rubocop-factory_bot
@@ -10,6 +13,9 @@ AllCops:
 
 Capybara/ClickLinkOrButtonStyle:
   Enabled: false
+
+Custom/DisallowStubbingInSystemSpecs:
+  Enabled: true
 
 Layout/FirstArrayElementLineBreak:
   Enabled: true
