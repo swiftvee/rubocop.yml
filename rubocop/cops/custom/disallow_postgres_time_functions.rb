@@ -15,7 +15,7 @@ module RuboCop
       #   # good
       #   Auction.where("start_time > ?", Time.current)
       #
-      class DisallowPostgresTimeFunctions < Base
+      class DisallowPostgresTimeFunctions < ::RuboCop::Cop::Base
         MSG = "Avoid PostgreSQL time functions (e.g. NOW(), CURRENT_TIMESTAMP). Use Time.current in Ruby instead.".freeze
 
         TIME_FUNCTION_REGEX = /
