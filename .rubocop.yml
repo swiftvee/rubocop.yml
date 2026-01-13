@@ -1,3 +1,6 @@
+require:
+  - ./rubocop/cops/custom/disallow_postgres_time_functions.rb
+
 plugins:
   - rubocop-capybara
   - rubocop-factory_bot
@@ -10,6 +13,9 @@ AllCops:
 
 Capybara/ClickLinkOrButtonStyle:
   Enabled: false
+
+Custom/DisallowPostgresTimeFunctions:
+  Enabled: true
 
 Layout/FirstArrayElementLineBreak:
   Enabled: true
