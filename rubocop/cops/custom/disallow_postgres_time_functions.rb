@@ -30,8 +30,8 @@ module RuboCop
             STATEMENT_TIMESTAMP |
             TRANSACTION_TIMESTAMP |
             TIMEOFDAY
-          )\s*\(?\s*\)?\b
-        /x
+          )\s*\(\s*\)
+        /xi
 
         def on_str(node)
           file_path = processed_source.buffer.name
