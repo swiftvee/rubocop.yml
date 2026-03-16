@@ -72,7 +72,7 @@ Metrics/ParameterLists:
 Rails/I18nLocaleTexts:
   Enabled: false
 
-Rails/StrongParametersExpect:
+Rails/LinkToBlank:
   Enabled: false
 
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
