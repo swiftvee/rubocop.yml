@@ -1,3 +1,8 @@
+require:
+<% (Dir["./rubocop/cops/custom/**/*.rb"] + Dir["./rubocop/rubocop/cops/custom/**/*.rb"]).sort.each do |path| %>
+  - <%= path %>
+<% end %>
+
 plugins:
   - rubocop-capybara
   - rubocop-factory_bot
