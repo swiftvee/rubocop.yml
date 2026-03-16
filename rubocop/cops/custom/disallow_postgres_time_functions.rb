@@ -19,18 +19,12 @@ module RuboCop
         MSG = "Avoid PostgreSQL time functions (e.g. NOW(), CURRENT_TIMESTAMP). Use Time.current in Ruby instead.".freeze
 
         TIME_FUNCTION_REGEX = /
-          \b(
-            NOW |
-            CURRENT_TIMESTAMP |
-            CURRENT_DATE |
-            CURRENT_TIME |
-            LOCALTIME |
-            LOCALTIMESTAMP |
-            CLOCK_TIMESTAMP |
-            STATEMENT_TIMESTAMP |
-            TRANSACTION_TIMESTAMP |
-            TIMEOFDAY
-          )\s*\(\s*\)
+          (?<!:)\b(?:
+            NOW\s*\(\s*\) |
+            TIMEOFDAY\s*\(\s*\) |
+            (?:CURRENT_TIMESTAMP|CURRENT_TIME|LOCALTIME|LOCALTIMESTAMP)\s*(?:\(\s*\d*\s*\))? |
+            (?:CURRENT_DATE|CLOCK_TIMESTAMP|STATEMENT_TIMESTAMP|TRANSACTION_TIMESTAMP)(?:\s*\(\s*\))?
+          )(?=\W|$)
         /xi
 
         def on_str(node)

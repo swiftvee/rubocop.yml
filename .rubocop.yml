@@ -16,9 +16,6 @@ AllCops:
 Capybara/ClickLinkOrButtonStyle:
   Enabled: false
 
-Custom/DisallowPostgresTimeFunctions:
-  Enabled: true
-
 Layout/FirstArrayElementLineBreak:
   Enabled: true
 
