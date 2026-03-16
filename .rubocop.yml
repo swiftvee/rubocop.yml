@@ -66,6 +66,9 @@ Metrics/ParameterLists:
 Rails/I18nLocaleTexts:
   Enabled: false
 
+Rails/LinkToBlank:
+  Enabled: false
+
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
 RSpec/DescribeClass:
   Exclude:
