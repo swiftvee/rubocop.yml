@@ -1,5 +1,7 @@
 require:
-  - ./rubocop/cops/custom/disallow_postgres_time_functions.rb
+<% (Dir["./rubocop/cops/custom/**/*.rb"] + Dir["./rubocop/rubocop/cops/custom/**/*.rb"]).sort.each do |path| %>
+  - <%= path %>
+<% end %>
 
 plugins:
   - rubocop-capybara
