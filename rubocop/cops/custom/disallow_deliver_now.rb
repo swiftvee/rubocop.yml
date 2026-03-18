@@ -2,9 +2,6 @@ module RuboCop
   module Cops
     module Custom
       # Prevent synchronous mail delivery in application code.
-      #
-      # Use deliver_later so email sending is enqueued and does not block
-      # request/response flow.
       class DisallowDeliverNow < ::RuboCop::Cop::Base
         extend ::RuboCop::Cop::AutoCorrector
 
