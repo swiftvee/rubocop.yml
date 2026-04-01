@@ -8,6 +8,7 @@ module RuboCop
         def on_send(node)
           return unless node.method?(:transaction)
           return unless transaction_block_call?(node)
+          return if node.receiver.nil?
           return if application_record_receiver?(node.receiver)
 
           add_offense(node.loc.selector, message: MSG)

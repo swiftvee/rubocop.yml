@@ -25,10 +25,9 @@ RSpec.describe RuboCop::Cops::Custom::EnforceApplicationRecordTransaction do
     RUBY
   end
 
-  it "registers an offense for implicit receiver transaction calls" do
-    expect_offense(<<~RUBY)
+  it "does not register an offense for implicit receiver transaction calls" do
+    expect_no_offenses(<<~RUBY)
       transaction { do_stuff }
-      ^^^^^^^^^^^ Use ApplicationRecord.transaction for transaction blocks.
     RUBY
   end
 

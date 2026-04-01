@@ -131,6 +131,3 @@ Style/StringLiterals:
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
-
-Custom/EnforceApplicationRecordTransaction:
-  Enabled: true
