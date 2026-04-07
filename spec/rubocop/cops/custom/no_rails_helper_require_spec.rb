@@ -2,32 +2,31 @@ require_relative "../../../spec_helper"
 require_relative "../../../../rubocop/cops/custom/no_rails_helper_require"
 
 RSpec.describe RuboCop::Cops::Custom::NoRailsHelperRequire do
-  subject(:offenses) { investigate(source).offenses }
+  let(:config) { RuboCop::Config.new("Custom/NoRailsHelperRequire" => { "Enabled" => true }) }
+  let(:cop) { described_class.new(config) }
 
-  let(:cop) { described_class.new }
-
-  def investigate(source)
-    processed_source = RuboCop::ProcessedSource.new(source, RUBY_VERSION.to_f)
-    commissioner = RuboCop::Cop::Commissioner.new([cop], [], raise_error: true)
-
-    commissioner.investigate(processed_source)
+  context "when requiring rails_helper" do
+    it "registers an offense" do
+      expect_offense(<<~RUBY)
+        require "rails_helper"
+        ^^^^^^^^^^^^^^^^^^^^^^ #{described_class::MSG}
+      RUBY
+    end
   end
 
-  context 'when requiring "rails_helper"' do
-    let(:source) { 'require "rails_helper"' }
-
-    it "registers one offense" do
-      expect(offenses.size).to eq(1)
-    end
-
-    it "uses the configured message" do
-      expect(offenses.first.message).to include(described_class::MSG)
+  context "when requiring relative rails_helper" do
+    it "does not register an offense" do
+      expect_no_offenses(<<~RUBY)
+        require_relative "rails_helper"
+      RUBY
     end
   end
 
   context "when not requiring rails_helper" do
-    let(:source) { 'require "spec_helper"' }
-
-    it { is_expected.to be_empty }
+    it "does not register an offense" do
+      expect_no_offenses(<<~RUBY)
+        require "spec_helper"
+      RUBY
+    end
   end
 end
