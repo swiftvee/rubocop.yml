@@ -2,7 +2,7 @@ require_relative "../../../spec_helper"
 require_relative "../../../../rubocop/cops/custom/disallow_describe_call"
 
 RSpec.describe RuboCop::Cops::Custom::DisallowDescribeCall do
-  let(:config) { RuboCop::Config.new("Custom/DisallowDescribeCall" => { "Enabled" => true }) }
+  let(:config) { RuboCop::Config.new("Custom/DisallowDescribeCall" => {"Enabled" => true}) }
   let(:cop) { described_class.new(config) }
 
   it "registers an offense for describe '#call'" do

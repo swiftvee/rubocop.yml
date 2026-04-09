@@ -2,7 +2,7 @@ require_relative "../../../spec_helper"
 require_relative "../../../../rubocop/cops/custom/enforce_dependent_nil_for_lambda_relations"
 
 RSpec.describe RuboCop::Cops::Custom::EnforceDependentNilForLambdaRelations do
-  let(:config) { RuboCop::Config.new("Custom/EnforceDependentNilForLambdaRelations" => { "Enabled" => true }) }
+  let(:config) { RuboCop::Config.new("Custom/EnforceDependentNilForLambdaRelations" => {"Enabled" => true}) }
   let(:cop) { described_class.new(config) }
 
   it "registers an offense for has_many with a lambda and no dependent option" do

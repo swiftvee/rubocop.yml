@@ -16,7 +16,7 @@ module RuboCop
           end
         end
 
-        alias on_csend on_send
+        alias_method :on_csend, :on_send
 
         private
 

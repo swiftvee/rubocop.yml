@@ -11,7 +11,7 @@ module RuboCop
           add_offense(node.loc.selector, message: MSG)
         end
 
-        alias on_csend on_send
+        alias_method :on_csend, :on_send
       end
     end
   end

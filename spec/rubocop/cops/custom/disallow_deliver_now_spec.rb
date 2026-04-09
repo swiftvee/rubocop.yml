@@ -2,7 +2,7 @@ require_relative "../../../spec_helper"
 require_relative "../../../../rubocop/cops/custom/disallow_deliver_now"
 
 RSpec.describe RuboCop::Cops::Custom::DisallowDeliverNow do
-  let(:config) { RuboCop::Config.new("Custom/DisallowDeliverNow" => { "Enabled" => true }) }
+  let(:config) { RuboCop::Config.new("Custom/DisallowDeliverNow" => {"Enabled" => true}) }
   let(:cop) { described_class.new(config) }
 
   it "registers an offense for deliver_now" do

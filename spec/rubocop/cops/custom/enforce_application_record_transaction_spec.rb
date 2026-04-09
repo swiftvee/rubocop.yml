@@ -2,7 +2,7 @@ require_relative "../../../spec_helper"
 require_relative "../../../../rubocop/cops/custom/enforce_application_record_transaction"
 
 RSpec.describe RuboCop::Cops::Custom::EnforceApplicationRecordTransaction do
-  let(:config) { RuboCop::Config.new("Custom/EnforceApplicationRecordTransaction" => { "Enabled" => true }) }
+  let(:config) { RuboCop::Config.new("Custom/EnforceApplicationRecordTransaction" => {"Enabled" => true}) }
   let(:cop) { described_class.new(config) }
 
   it "does not register an offense for ApplicationRecord.transaction" do
