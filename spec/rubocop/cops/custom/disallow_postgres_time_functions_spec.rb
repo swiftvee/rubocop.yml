@@ -4,7 +4,7 @@ require_relative "../../../../rubocop/cops/custom/disallow_postgres_time_functio
 RSpec.describe RuboCop::Cops::Custom::DisallowPostgresTimeFunctions do
   subject(:time_function_regex) { described_class::TIME_FUNCTION_REGEX }
 
-  let(:config) { RuboCop::Config.new("Custom/DisallowPostgresTimeFunctions" => { "Enabled" => true }) }
+  let(:config) { RuboCop::Config.new("Custom/DisallowPostgresTimeFunctions" => {"Enabled" => true}) }
   let(:cop) { described_class.new(config) }
 
   describe "TIME_FUNCTION_REGEX" do

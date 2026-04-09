@@ -14,14 +14,14 @@ module RuboCop
           add_offense(node.loc.selector, message: MSG)
         end
 
-        alias on_csend on_send
+        alias_method :on_csend, :on_send
 
         private
 
         def application_record_receiver?(receiver)
           return false unless receiver&.const_type?
 
-          ["ApplicationRecord", "::ApplicationRecord"].include?(receiver.const_name)
+          receiver.const_name == "ApplicationRecord"
         end
 
         def transaction_block_call?(node)
