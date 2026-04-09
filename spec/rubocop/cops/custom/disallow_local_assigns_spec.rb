@@ -1,8 +1,8 @@
 require_relative "../../../spec_helper"
-require_relative "../../../../rubocop/cops/custom/no_local_assigns"
+require_relative "../../../../rubocop/cops/custom/disallow_local_assigns"
 
-RSpec.describe RuboCop::Cops::Custom::NoLocalAssigns do
-  let(:config) { RuboCop::Config.new("Custom/NoLocalAssigns" => { "Enabled" => true }) }
+RSpec.describe RuboCop::Cops::Custom::DisallowLocalAssigns do
+  let(:config) { RuboCop::Config.new("Custom/DisallowLocalAssigns" => { "Enabled" => true }) }
   let(:cop) { described_class.new(config) }
 
   it "registers an offense for local_assigns usage" do

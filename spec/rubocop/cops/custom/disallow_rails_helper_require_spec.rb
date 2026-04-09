@@ -1,8 +1,8 @@
 require_relative "../../../spec_helper"
-require_relative "../../../../rubocop/cops/custom/no_rails_helper_require"
+require_relative "../../../../rubocop/cops/custom/disallow_rails_helper_require"
 
-RSpec.describe RuboCop::Cops::Custom::NoRailsHelperRequire do
-  let(:config) { RuboCop::Config.new("Custom/NoRailsHelperRequire" => { "Enabled" => true }) }
+RSpec.describe RuboCop::Cops::Custom::DisallowRailsHelperRequire do
+  let(:config) { RuboCop::Config.new("Custom/DisallowRailsHelperRequire" => { "Enabled" => true }) }
   let(:cop) { described_class.new(config) }
 
   context "when requiring rails_helper" do

@@ -2,7 +2,7 @@ module RuboCop
   module Cops
     module Custom
       # Disallow local_assigns usage in views/partials.
-      class NoLocalAssigns < ::RuboCop::Cop::Base
+      class DisallowLocalAssigns < ::RuboCop::Cop::Base
         MSG = "Do not use local_assigns.".freeze
 
         def on_send(node)

@@ -2,7 +2,7 @@ module RuboCop
   module Cops
     module Custom
       # Disallow requiring rails_helper directly in spec files.
-      class NoRailsHelperRequire < ::RuboCop::Cop::Base
+      class DisallowRailsHelperRequire < ::RuboCop::Cop::Base
         MSG = 'Do not require "rails_helper" in spec files. Use shared test setup without adding rails_helper requires.'.freeze
 
         def_node_matcher :rails_helper_require?, <<~PATTERN
