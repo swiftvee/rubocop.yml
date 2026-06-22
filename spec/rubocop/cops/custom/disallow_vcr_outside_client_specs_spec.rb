@@ -59,4 +59,12 @@ RSpec.describe RuboCop::Cops::Custom::DisallowVcrOutsideClientSpecs do
       VCRecorder.use_cassette("widget")
     RUBY
   end
+
+  it "does not register an offense for :vcr outside RSpec metadata" do
+    expect_no_offenses(<<~RUBY, "spec/models/widget_spec.rb")
+      do_something(:vcr)
+      value = :vcr
+      config = { vcr: true }
+    RUBY
+  end
 end
