@@ -13,8 +13,6 @@ module RuboCop
           describe context example_group
           it specify example
           feature scenario
-          fdescribe fcontext fit fspecify ffeature fscenario
-          xdescribe xcontext xit xspecify xfeature xscenario
           shared_examples shared_context shared_examples_for
         ].freeze
 
