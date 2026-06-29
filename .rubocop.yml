@@ -19,9 +19,6 @@ AllCops:
   Exclude:
     - 'rubocop/**/*'
 
-Capybara/ClickLinkOrButtonStyle:
-  Enabled: false
-
 Layout/FirstArrayElementLineBreak:
   Enabled: true
 
