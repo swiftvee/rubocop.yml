@@ -1,11 +1,12 @@
 module RuboCop
   module Cops
     module Custom
-      # Require `prefix: true` on `enum` and `native_enum` declarations.
+      # Require `prefix: true` on `enum` and `native_enum` declarations. StoreModel spells the option `_prefix`.
       class EnforceEnumPrefix < ::RuboCop::Cop::Base
         MSG = "Declare enum with `prefix: true`.".freeze
 
         ENUM_METHODS = %i[enum native_enum].freeze
+        PREFIX_KEYS = %i[prefix _prefix].freeze
 
         def on_send(node)
           return unless ENUM_METHODS.include?(node.method_name)
@@ -23,7 +24,7 @@ module RuboCop
         def prefix_true?(argument)
           return false unless argument.hash_type?
 
-          argument.pairs.any? { |pair| pair.key.sym_type? && pair.key.value == :prefix && pair.value.true_type? }
+          argument.pairs.any? { |pair| pair.key.sym_type? && PREFIX_KEYS.include?(pair.key.value) && pair.value.true_type? }
         end
       end
     end

@@ -56,6 +56,19 @@ RSpec.describe RuboCop::Cops::Custom::EnforceEnumPrefix do
     RUBY
   end
 
+  it "does not register an offense for a StoreModel enum with _prefix: true" do
+    expect_no_offenses(<<~RUBY)
+      enum :type, in: Auction.auction_types, _prefix: true
+    RUBY
+  end
+
+  it "registers an offense for a StoreModel enum with a custom _prefix" do
+    expect_offense(<<~RUBY)
+      enum :type, in: Auction.auction_types, _prefix: :thing
+      ^^^^ Declare enum with `prefix: true`.
+    RUBY
+  end
+
   it "does not register an offense for migration enum columns" do
     expect_no_offenses(<<~RUBY)
       t.enum :lot_type, null: false, enum_type: "lots_type"
