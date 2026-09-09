@@ -108,6 +108,9 @@ RSpec/NestedGroups:
 RSpec/Pending:
   Enabled: true
 
+Style/DateTime:
+  Enabled: true
+
 # https://docs.rubocop.org/rubocop/cops_style.html#styledocumentation
 Style/Documentation:
   Enabled: false
