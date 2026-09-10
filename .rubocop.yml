@@ -68,8 +68,22 @@ Metrics/MethodLength:
 Metrics/ModuleLength:
   Max: 200
 
+# Keyword arguments carry their name at the call site, so a long keyword list does not have
+# the ordering and readability problems the cop counts parameters to catch.
 Metrics/ParameterLists:
   Max: 7
+  CountKeywordArgs: false
+
+# `bg` is Bootstrap's own vocabulary and `og` is the OpenGraph prefix, the same kind of domain
+# abbreviation as the `db`/`io`/`ip`/`os` the cop ships with. The merge appends to that list,
+# so a name RuboCop adds later still arrives.
+Naming/MethodParameterName:
+  inherit_mode:
+    merge:
+      - AllowedNames
+  AllowedNames:
+    - bg
+    - og
 
 # https://docs.rubocop.org/rubocop-rails/cops_rails.html#railsi18nlocaletexts
 Rails/I18nLocaleTexts:
@@ -77,6 +91,15 @@ Rails/I18nLocaleTexts:
 
 Rails/LinkToBlank:
   Enabled: false
+
+# `config/environments/staging.rb` is the fourth environment; naming it lets the cop keep
+# catching a misspelled one everywhere else.
+Rails/UnknownEnv:
+  inherit_mode:
+    merge:
+      - Environments
+  Environments:
+    - staging
 
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
 RSpec/DescribeClass:
