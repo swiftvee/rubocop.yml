@@ -92,6 +92,13 @@ Rails/I18nLocaleTexts:
 Rails/LinkToBlank:
   Enabled: false
 
+# https://docs.rubocop.org/rubocop-rails/cops_rails.html#railstimezone
+# The default `flexible` style accepts `Time.now.utc`, which reads as deliberate but still
+# takes its date from UTC, so a value built from it lands on the previous day for the first
+# two hours of every SAST day. `strict` accepts only a `Time.zone` source.
+Rails/TimeZone:
+  EnforcedStyle: strict
+
 # `config/environments/staging.rb` is the fourth environment; naming it lets the cop keep
 # catching a misspelled one everywhere else.
 Rails/UnknownEnv:
