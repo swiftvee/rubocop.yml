@@ -132,7 +132,9 @@ RSpec/MultipleMemoizedHelpers:
 
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecnestedgroups
 RSpec/NestedGroups:
-  Max: 7
+  Max: 4
+  AllowedGroups:
+    - describe
 
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecpending
 RSpec/Pending:
