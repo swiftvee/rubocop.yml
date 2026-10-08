@@ -1,8 +1,8 @@
 require_relative "../../../spec_helper"
-require_relative "../../../../rubocop/cops/custom/enforce_enum_prefix"
+require_relative "../../../../rubocop/cops/custom/enforce_store_model_enum_prefix"
 
-RSpec.describe RuboCop::Cops::Custom::EnforceEnumPrefix do
-  let(:config) { RuboCop::Config.new("Custom/EnforceEnumPrefix" => {"Enabled" => true}) }
+RSpec.describe RuboCop::Cops::Custom::EnforceStoreModelEnumPrefix do
+  let(:config) { RuboCop::Config.new("Custom/EnforceStoreModelEnumPrefix" => {"Enabled" => true}) }
   let(:cop) { described_class.new(config) }
 
   it "registers an offense for a StoreModel enum without a prefix" do

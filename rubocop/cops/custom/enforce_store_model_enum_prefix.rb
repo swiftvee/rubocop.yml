@@ -4,7 +4,7 @@ module RuboCop
       # Require `_prefix: true` on StoreModel enum declarations (`enum :type, in: ...`). ActiveRecord enums are
       # declared with `native_enum`, which passes `prefix: true` itself, and `enum` without `in:` is left to
       # Custom/DisallowDefaultEnum.
-      class EnforceEnumPrefix < ::RuboCop::Cop::Base
+      class EnforceStoreModelEnumPrefix < ::RuboCop::Cop::Base
         MSG = "Declare StoreModel enum with `_prefix: true`.".freeze
 
         def on_send(node)
