@@ -99,15 +99,6 @@ Rails/LinkToBlank:
 Rails/TimeZone:
   EnforcedStyle: strict
 
-# `config/environments/staging.rb` is the fourth environment; naming it lets the cop keep
-# catching a misspelled one everywhere else.
-Rails/UnknownEnv:
-  inherit_mode:
-    merge:
-      - Environments
-  Environments:
-    - staging
-
 # https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecdescribeclass
 RSpec/DescribeClass:
   Exclude:
