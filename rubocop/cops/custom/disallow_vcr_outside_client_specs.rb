@@ -1,11 +1,11 @@
 module RuboCop
   module Cops
     module Custom
-      # Disallow using VCR cassettes outside of spec/clients.
+      # Disallow using VCR cassettes outside of spec/clients and spec/services/integrations.
       class DisallowVcrOutsideClientSpecs < ::RuboCop::Cop::Base
-        MSG = "Only use VCR cassettes in spec/clients.".freeze
+        MSG = "Only use VCR cassettes in spec/clients and spec/services/integrations.".freeze
 
-        ALLOWED_PATH = %r{(\A|/)spec/clients/}
+        ALLOWED_PATH = %r{(\A|/)spec/(clients|services/integrations)/}
 
         CASSETTE_METHODS = %i[use_cassette insert_cassette].freeze
 

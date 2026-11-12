@@ -8,21 +8,21 @@ RSpec.describe RuboCop::Cops::Custom::DisallowVcrOutsideClientSpecs do
   it "registers an offense for VCR.use_cassette" do
     expect_offense(<<~RUBY, "spec/models/widget_spec.rb")
       VCR.use_cassette("widget") { Widget.fetch }
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^ Only use VCR cassettes in spec/clients.
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^ Only use VCR cassettes in spec/clients and spec/services/integrations.
     RUBY
   end
 
   it "registers an offense for VCR.insert_cassette" do
     expect_offense(<<~RUBY, "spec/models/widget_spec.rb")
       VCR.insert_cassette("widget")
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Only use VCR cassettes in spec/clients.
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Only use VCR cassettes in spec/clients and spec/services/integrations.
     RUBY
   end
 
   it "registers an offense for the :vcr metadata symbol" do
     expect_offense(<<~RUBY, "spec/lib/s3/multipart_upload_spec.rb")
       RSpec.describe S3::MultipartUpload, :vcr do
-                                          ^^^^ Only use VCR cassettes in spec/clients.
+                                          ^^^^ Only use VCR cassettes in spec/clients and spec/services/integrations.
       end
     RUBY
   end
@@ -30,7 +30,7 @@ RSpec.describe RuboCop::Cops::Custom::DisallowVcrOutsideClientSpecs do
   it "registers an offense for the vcr: metadata pair" do
     expect_offense(<<~RUBY, "spec/models/widget_spec.rb")
       it "fetches", vcr: { record: :none } do
-                    ^^^ Only use VCR cassettes in spec/clients.
+                    ^^^ Only use VCR cassettes in spec/clients and spec/services/integrations.
       end
     RUBY
   end
@@ -49,6 +49,13 @@ RSpec.describe RuboCop::Cops::Custom::DisallowVcrOutsideClientSpecs do
         it "fetches" do
           VCR.use_cassette("widget") { WidgetClient.fetch }
         end
+      end
+    RUBY
+  end
+
+  it "does not register an offense in spec/services/integrations" do
+    expect_no_offenses(<<~RUBY, "spec/services/integrations/widget/fetch_service_spec.rb")
+      RSpec.describe Integrations::Widget::FetchService, :vcr do
       end
     RUBY
   end
